@@ -32,10 +32,10 @@ public class HotelCheckInSD extends BasePageSD {
         Select roomDropdown = new Select(room);
         List<WebElement> roomsList = roomDropdown.getOptions();
         for (int i = 0; i < roomsList.size(); i++) {
-                WebElement totalRooms = roomsList.get(i);
-           // System.out.println("print total romms: "+totalRooms.getText());
-                if(totalRooms.getText().equals(new Integer(selectNumberofRooms).toString())) {
-                    totalRooms.click();
+                WebElement roomElement = roomsList.get(i);
+           // System.out.println("print total romms: "+roomItem.getText());
+                if(roomElement.getText().equals(new Integer(selectNumberofRooms).toString())) {
+                    roomElement.click();
                     Thread.sleep(2000);
                     break;
                 }
@@ -50,10 +50,10 @@ public class HotelCheckInSD extends BasePageSD {
         Select adultsDropDown = new Select(adults);
         List<WebElement> adultsList = adultsDropDown.getOptions();
         for (int i = 0; i < adultsList.size(); i++) {
-            WebElement totalAdults = adultsList.get(i);
+            WebElement adultElement = adultsList.get(i);
 
-            if (totalAdults.getText().equals((new Integer(numberOfAdults).toString()))){
-                totalAdults.click();
+            if (adultElement.getText().equals((new Integer(numberOfAdults).toString()))){
+                adultElement.click();
                 Thread.sleep(2000);
                 break;
             }
@@ -66,9 +66,9 @@ public class HotelCheckInSD extends BasePageSD {
         Select kidsDropDown = new Select(kids);
         List<WebElement> kidsList = kidsDropDown.getOptions();
         for (int i = 0; i < kidsList.size(); i++) {
-            WebElement totalKids = kidsList.get(i);
-            if (totalKids.getText().equals((new Integer(numberOfKids).toString()))){
-                totalKids.click();
+            WebElement kidElement = kidsList.get(i);
+            if (kidElement.getText().equals((new Integer(numberOfKids).toString()))){
+                kidElement.click();
                 Thread.sleep(2000);
                 break;
             }
